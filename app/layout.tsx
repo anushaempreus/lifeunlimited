@@ -3,6 +3,7 @@ import { Inter, Fraunces } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Splash from "@/components/Splash";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -132,6 +133,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }}
         />
+        <Splash />
         <Header />
         <main className="flex-1 pt-[88px]">{children}</main>
         <Footer />
