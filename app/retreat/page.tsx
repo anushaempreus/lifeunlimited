@@ -83,13 +83,28 @@ export default function RetreatPage() {
             for reflection, connection, and rest, alongside nourishing meals and
             thoughtful care throughout.
           </p>
-          <p>
+        </div>
+
+        {/* Instagram reel from the retreat */}
+        <div className="mt-10 max-w-[380px]">
+          <div className="card !rounded-3xl overflow-hidden">
+            <iframe
+              title="Nourish & Nurture retreat reel — @sueread_psychologist on Instagram"
+              src="https://www.instagram.com/reel/DZeiLGXSQLp/embed/"
+              className="w-full aspect-[9/16] border-0"
+              loading="lazy"
+              allow="encrypted-media"
+              allowFullScreen
+            />
+          </div>
+          <p className="mt-3 text-sm">
             <a
               href="https://www.instagram.com/reel/DZeiLGXSQLp/"
               target="_blank"
               rel="noopener noreferrer"
+              className="text-blue-dark underline underline-offset-4"
             >
-              View the retreat reel on Instagram (@sueread_psychologist)
+              Watch the retreat reel on Instagram (@sueread_psychologist)
             </a>
           </p>
         </div>

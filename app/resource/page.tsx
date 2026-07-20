@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { RESOURCE_CATEGORIES } from "@/lib/factsheets";
 
@@ -60,16 +61,30 @@ export default function ResourcesPage() {
 
       <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
         {RESOURCE_CATEGORIES.map((c) => (
-          <div key={c.slug} className="card p-7 flex flex-col">
-            <h2 className="text-xl font-bold mb-3">{c.title}</h2>
-            <p className="mb-5 flex-1">
-              {c.slug === "health-nutrition"
-                ? "The over-arching philosophy of Life Unlimited is about helping people gain “Optimal Health” – to enable our clients to be the best they can be and have the best life possible, socially, physically and psychologically."
-                : "Resources coming soon"}
-            </p>
-            <Link href={`/resources/${c.slug}`} className="btn-blue self-start text-sm">
-              Read more
-            </Link>
+          <div key={c.slug} className="card group flex flex-col">
+            <div className="card-img relative aspect-[3/2]">
+              <Image
+                src={c.image}
+                alt={c.title}
+                fill
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                className="object-cover"
+              />
+            </div>
+            <div className="p-7 flex flex-col flex-1">
+              <h2 className="text-xl font-bold mb-3">{c.title}</h2>
+              <p className="mb-5 flex-1">
+                {c.slug === "health-nutrition"
+                  ? "The over-arching philosophy of Life Unlimited is about helping people gain “Optimal Health” – to enable our clients to be the best they can be and have the best life possible, socially, physically and psychologically."
+                  : "Resources coming soon"}
+              </p>
+              <Link
+                href={`/resources/${c.slug}`}
+                className="inline-flex items-center gap-3 font-semibold text-sm text-heading"
+              >
+                Read more <span className="arrow-dot">→</span>
+              </Link>
+            </div>
           </div>
         ))}
       </div>

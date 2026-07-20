@@ -288,17 +288,19 @@ export function getFactSheet(slug: string) {
 export type ResourceCategory = {
   slug: string;
   title: string;
+  image: string;
   body: Block[];
 };
 
 export const RESOURCE_CATEGORIES: ResourceCategory[] = [
-  { slug: "values-and-goals", title: "Values and Goals", body: [{ type: "p", text: "Resources coming soon" }] },
-  { slug: "movement", title: "Movement", body: [{ type: "p", text: "Resources coming soon" }] },
-  { slug: "sleep", title: "Sleep", body: [{ type: "p", text: "Resources coming soon" }] },
-  { slug: "mindfulness", title: "Mindfulness", body: [{ type: "p", text: "Resources coming soon" }] },
+  { slug: "values-and-goals", title: "Values and Goals", image: "/images/org/group-talking.jpg", body: [{ type: "p", text: "Resources coming soon" }] },
+  { slug: "movement", title: "Movement", image: "/images/training/bootcamp-team.jpg", body: [{ type: "p", text: "Resources coming soon" }] },
+  { slug: "sleep", title: "Sleep", image: "/images/resource/sleep.jpg", body: [{ type: "p", text: "Resources coming soon" }] },
+  { slug: "mindfulness", title: "Mindfulness", image: "/images/resource/woman-eating-healthy.jpg", body: [{ type: "p", text: "Resources coming soon" }] },
   {
     slug: "health-nutrition",
     title: "Health & Nutrition",
+    image: "/images/resource/health-nutrition-banner.jpeg",
     body: [
       {
         type: "lead",
