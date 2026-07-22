@@ -148,10 +148,20 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-gray-200/70">
           <div className="mx-auto max-w-[1290px] px-4 lg:px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-2 text-sm text-body/80">
-            <span>© {new Date().getFullYear()} Empreus IT Support</span>
             <span className="inline-flex items-center gap-2">
               <span className="inline-block h-1.5 w-6 rounded-full bg-gradient-to-r from-olive to-blue" aria-hidden />
-              Life Unlimited Health Solutions Pty Ltd
+              © {new Date().getFullYear()} Life Unlimited Health Solutions Pty Ltd
+            </span>
+            <span>
+              Managed by{" "}
+              <a
+                href="https://empreus.com.au"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-heading hover:text-blue-dark transition-colors"
+              >
+                Empreus IT Support
+              </a>
             </span>
           </div>
         </div>
