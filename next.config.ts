@@ -47,6 +47,28 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  // 301s for URLs that existed on the old WordPress site but have no
+  // direct equivalent in the new structure — preserves indexed rankings
+  // and any external links after the domain cutover.
+  async redirects() {
+    return [
+      { source: "/home", destination: "/", permanent: true },
+      { source: "/counselling-psychology", destination: "/resource/counselling-psychology", permanent: true },
+      { source: "/organisational-solutions-2", destination: "/organisational-solutions", permanent: true },
+      { source: "/organisational-solutions/bootcamp-for-the-brain-2", destination: "/organisational-solutions/bootcamp-for-the-brain", permanent: true },
+      { source: "/resource/counselling-psychology/resources", destination: "/resource", permanent: true },
+      { source: "/resources", destination: "/resource", permanent: true },
+      // Old fact-sheet URLs under /resources/ (also linked, broken, from the old site itself)
+      { source: "/resources/depression", destination: "/resource/depression", permanent: true },
+      { source: "/resources/stres", destination: "/resource/stres", permanent: true },
+      { source: "/resources/what-is-anxiety", destination: "/resource/what-is-anxiety", permanent: true },
+      { source: "/resources/what-is-trauma", destination: "/resource/what-is-trauma", permanent: true },
+      { source: "/people", destination: "/our-people", permanent: true },
+      // Junk pages that were indexed on the old site
+      { source: "/test-popup", destination: "/", permanent: true },
+      { source: "/lifestream", destination: "/", permanent: true },
+    ];
+  },
 };
 
 export default nextConfig;
