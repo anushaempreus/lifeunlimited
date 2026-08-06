@@ -293,6 +293,28 @@ h1, h2, h3, h4, h5, h6 {
       animation: none;
     }
   }
+
+  /* JS fallback (ScrollFx) for browsers without animation-timeline —
+     html.fx-fallback is only ever added by JS in those browsers, so
+     content is never hidden for no-JS visitors or supporting browsers.
+     Reveals via a [data-fx-in] attribute (not className/style) so React
+     hydration is never disturbed. */
+  html.fx-fallback main section:not([data-no-reveal]),
+  html.fx-fallback main .card,
+  html.fx-fallback main blockquote {
+    transition: opacity 0.65s ease, translate 0.65s cubic-bezier(0.2, 0.8, 0.25, 1);
+  }
+  html.fx-fallback main section:not([data-no-reveal]):not([data-fx-in]),
+  html.fx-fallback main .card:not([data-fx-in]),
+  html.fx-fallback main blockquote:not([data-fx-in]) {
+    opacity: 0;
+    translate: 0 26px;
+  }
+  /* Hero-area cards are excluded from the fallback hide as well */
+  html.fx-fallback [data-no-reveal] .card {
+    opacity: 1;
+    translate: 0 0;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
